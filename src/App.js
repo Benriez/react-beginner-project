@@ -1,26 +1,40 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Card from './components/card';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  
+  state = {
+    avatarId: 50,
+    personName: 'Rick Sanchez'
+  }
+
+  changeAvatar = () => {
+    this.setState({
+      avatarId: 43,
+      personName: "Summer Smith"
+    })
+  }
+
+
+
+
+  render () {
+    return (
+      <div className="container">
+        <div className="row">
+          <Card name={this.state.personName} job="scientist" avatarId={this.state.avatarId} />
+          <Card name="Morty Smith" job="student" avatarId={28} />
+          <Card name="Gerry Smith" job="eat apples" avatarId={47} />
+        </div>
+        <div className="row">
+          <div className="col-md-3">
+            <a onClick={this.changeAvatar} className="changeAvatar" href="#">Change Details</a>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
