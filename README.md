@@ -1,5 +1,5 @@
 ## Visit
-https://github.com/Benriez/react-beginner-project.git
+https://benriez.github.io/react-beginner-project/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
